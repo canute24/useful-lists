@@ -25,7 +25,7 @@ sidetable - Create Simple Summary Tables in Pandas
 
 Plotting:
 Mathplotlib - plting library
-   Seaborn - Higher level interface for mathplotlib
+  Seaborn - Higher level interface for mathplotlib
 Bqplot – 2D plotting library for Jupyter notebook
 Plotnine – ggplot2 inspired plotting library
 Altair - Vega based Plotly alternative
