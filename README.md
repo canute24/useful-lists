@@ -1,6 +1,12 @@
 # Useful Modules
+
+Pandas Quickstart:
+http://pandas.pydata.org/pandas-docs/stable/10min.html
+http://pandas.pydata.org/pandas-docs/stable/cookbook.html
+https://github.com/jvns/pandas-cookbook
+
 <pre>
-List of useful modules for python and R
+List of useful modules for Python
 
 Data & IO:
 csvkit – Library for working with csv files
@@ -297,59 +303,4 @@ Pylance
 Indenticator
 Bracket Pair Colorizer 2/3
 Dash
-
-http://pandas.pydata.org/pandas-docs/stable/10min.html
-http://pandas.pydata.org/pandas-docs/stable/cookbook.html
-https://github.com/jvns/pandas-cookbook
-http://pandas.pydata.org/pandas-docs/stable/missing_data.html
-http://pandas.pydata.org/pandas-docs/stable/groupby.html
-http://pandas.pydata.org/pandas-docs/stable/reshaping.html
-http://pandas.pydata.org/pandas-docs/stable/merging.html
-http://pandas.pydata.org/pandas-docs/stable/io.html
-http://pandas.pydata.org/pandas-docs/stable/text.html
-http://pandas.pydata.org/pandas-docs/stable/visualization.html
-http://pandas.pydata.org/pandas-docs/stable/timeseries.html
-http://pandas.pydata.org/pandas-docs/stable/timedeltas.html
-http://pandas.pydata.org/pandas-docs/stable/categorical.html
-http://pandas.pydata.org/pandas-docs/stable/computation.html
-http://pandas.pydata.org/pandas-docs/stable/advanced.html
-
-R:
-Tidyverse - Collection R modules for data science
-ggplot2 - Plotting library
-Shiny - Webapp and web visualisations
-Rmarkdown – Rmd notebook like ipython
-Ggplot2 – for plotting
-Lattice – for multivariate relationships
-
-rCharts – for javascript charts
-googleVis – for using Google charts for vis
-ggvis – interactive grammer of graphics, when rendering in browser
-
-pqR – New version of R interpreter
-renjin, FastR – R writer in Java
-Riposte – Fast interpreter and JIT for R
-RevoScaleR – Commercial tool to handle big datasets
-Foreach – Commercial tool for parallel programming
-
-quantmod - development, testing, and deployment of statistically based trading models
-
----------------------
-Exploratory analysis:
-Split your data into complementary sets for training, validation (for parameter tuning, feature selection etc) and testing. This is actually more complex than it sounds: optimally, the test set should be as ‘similar’ as possible to the present ‘state of the market’, and both validation and test set should follow the same distribution. Otherwise you might waste effort tuning the model parameters on the validation set only to find that it poorly generalizes to the test set.
-
-Following the concept of ‘market regimes’?—?ie extended periods where a specific combination of commodities dominates the price dynamics of your target instrument?—?it might be worthwhile to first have a clustering algorithm of unsupervised learning discover defining correlations in the data and then evaluate model performance on data in the validation and test set belonging to the same clusters (see Figure 3?—?in this project, clustering increased predictive performance by 8%).
-
-Data Transformations:
-Moving averages can provide historical context and trends when your choice of learning algorithm does not have explicit memory cells like Recurrent Neural Networks or LSTMs.
-Using data or derived inputs such as indicators/indices which may be less accurate than the data you have may have some use specially if other participants can influence the output you are trying to model in which case they indicators/indices can provide inputs about how other participants will behave.
-
-Model Validation:
-Genetic algorithms allow you to explore the policy space, starting from a first generation of say 100 randomly chosen policy parameters, iteratively eliminating the 80 worst performers and making the 20 survivors produce 4 offspring each. Or you can employ a grid search in the multidimensional parameter space: starting from some plausible values for the parameters of the policy, what is the best-performing setting you can achieve by varying the parameter values one-by-one.
-
-A good measure to prevent overfitting the parameters to the validation set is a cross-validation with a ‘walk-forward-test’ (WTF) verifying the robustness of your approach: optimize the policy parameters on a validation segment, test them forward in time on data following the validation segment, shift the validation segment forward to include that test data, repeat. The basic assumption here is that the recent past is a better gauge for the future than the more distant past.
-
-Optimisation:
-Exploring the space of policy parameters in this framework is done via inefficient numerical optimisation, not with the powerful gradient optimization of your predictive Machine Learning model.
-https://towardsdatascience.com/https-medium-com-skuttruf-machine-learning-in-finance-algorithmic-trading-on-energy-markets-cb68f7471475
 </pre>
