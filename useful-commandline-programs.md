@@ -3,15 +3,15 @@
 Apps:
 - vim: editor, IDE, everything
 - vifm: filemanager with vim bindings
-- 
+
 Multimedia:
 - imagemagick: image manipulation
 - ffmpeg: audio/video
 - libav: audio/video
-- 
+
 Prompt:
 - Starship: prompt that works for any shell
-- 
+
 Search / Autocomplete:
 - z: file path autocomplete
 - fzf: fuzzy finder for all types of command line entries with .xxignore support
@@ -33,7 +33,7 @@ Editing:
 - bat: similar to cat with editor like formatting and color scheme
 - colordiff: Diff with colors
 - diff-so-fancy: upgraded git diff with better formatting
-- 
+
 Disk:
 - ncdu: disk usage
 - cfdisk: disk formatting similar to fdisk
