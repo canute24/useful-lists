@@ -1,8 +1,14 @@
 # Useful Command Line Programs
 
+Terminal:
+- st: light terminal
+- urxvt: unicode rxvt terminal
+
 Apps:
 - vim: editor, IDE, everything
 - vifm: filemanager with vim bindings
+- nnn: filemanager
+- ranger: python based file manager
 
 Multimedia:
 - imagemagick: image manipulation
