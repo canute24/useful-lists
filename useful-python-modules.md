@@ -405,7 +405,7 @@ Utilities:
 - re: regular expression
 - difflib: library for comparison and identify difference between patters with many helpful methods
 - shutil: Shell utility function like file properties and manipulation
-- pathlib — Object-oriented filesystem paths
+- pathlib: Object-oriented filesystem paths
 - importlib: working with modules and package resource tool (install importlib_resouces py < 3.7)
 - flit: tool to simplify package creation and publishing to PyPI
 - webbrowser: Convenient Web-browser controller
@@ -448,20 +448,3 @@ Compilers:
 - Numexpr: extension library for scipy which can further speed up Numpy and Pandas
 - numba: similar to numexpr
 - nutika and shedskin: transpiler which convert to C++
-
-VSCode Extenstions:
-- Python + Pylance # Combined since May 2021
-- Indenticator
-- Bracket Pair Colorizer 2/3
-- Zeal / Velocity
-
-Sublime Extentions:
-- Terminus
-- Terminal
-- MaterialTheme
-- MarkdownEditing
-- MarkdownExtended + MonokaiExtended
-- MarkdownLivePreview
-- MarkdownPreview: Opens in browser or github via github API
-- typewriter
-- RemoveDuplicateLines
