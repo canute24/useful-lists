@@ -1,3 +1,6 @@
+https://developers.redhat.com/cheat-sheets/linux-commands-cheat-sheet
+https://developers.redhat.com/cheat-sheets/advanced-linux-commands
+
 # Useful Python Modules
 
 As Python is finding use in many different applications and huge number of modules with a similar objective but different ideology / features are introduced, a list of propular / useful modules for quick reference helps a lot.
@@ -23,6 +26,11 @@ System:
 - webbrowser: Convenient Web-browser controller
 - pyperclip: clipboard access
 
+Compatibility:
+- win32api: Windows system calls
+- reticulate: tools for interoperability between Python and R
+- rpy/rpy2: calling R from python
+
 Data Parsing / Conversion:
 - stream_unzip: steam data from zip files instead of reading / loading the entire file
 - difflib: library for comparison and identify difference between patterns with many helpful methods
@@ -38,16 +46,7 @@ Data Parsing / Conversion:
 - catdoc: extract text from MSWord doc format
 - Shelve: pickle wrapper
     - Pickle / cpickle: for serializing objects for storage
-- pint: Python units library
-
-Time and date:
-- datetime: working with date and time
-- python-dateutil: working with timezones
-- pytz: alternative to python-dateutil (has different interface compared to dateutil so dateutil is preferred)
-- dateparser: Natural language date parsing, supports multiple languages
-- arrow: offers a sensible and human-friendly approach to creating, manipulating, formatting and converting dates, times and timestamps
-- pendulum: improves API consistency over arrow
-- calender: generate calendars for any month
+- fsspec: provides an abstract filesystem with a consistent API for file access
 
 Data Pipeline:
 - Dataprep: lets you prepare your data using a single library with a few lines of code
@@ -115,6 +114,7 @@ Email:
 Network / Communication:
 - packet-sniffer: pure-Python network packet sniffer based on PF_PACKET (Linux only)
 - httpx: next generation HTTP client for Python based on requests
+
 ### GUI / Interface
 
 Indicators:
@@ -133,11 +133,14 @@ GUI:
 
 Console-GUI:
 - curses: used to create text user interface is restricted to Unix-like systems
+- windows-curses: curses compatible module for windows
 - WConio: is a wrapper for Turbo-C’s CONIO.H, used to create text user interfaces
 - WConio2: pure python implementation of WConio
 - Rich: for rendering rich text and beautiful formatting to the terminal with rich text REPL
 - Colorama: colouring command-line text
 - tabulate: pretty print tabular data
+- py_cui: Tk like API for creating CUI/TUI interfaces with widgets, inspired by gocui
+- textual: CUI/TUI interface with widgets based on Rich module for formatting
 
 Argument Parser:
 - cliche: Build a simple command-line interface from your functions using a decorator while keeping it usage for other scripts
@@ -169,6 +172,8 @@ Compilers:
 Python Grammer:
 - collections: additional data types
 - itertools/functools - tools for using iterators and functions as functional progamming
+- functools.singledispatch: provide basic multiple dispatch functionality (function overloading)
+- multipledispatch: full featured multiple dispatch
 - toolz (itertoolz/functoolz/distoolz) - supplementary to above which implements some missing functionality
 
 Packages / Modules / Enviornments:
@@ -243,6 +248,8 @@ Profiling:
 - VizTracer: traces concurrent python programs and also helps in debugging
 
 RPA:
+- mouse: monitor and control mouse
+- keyboard: monitor and control keyboard, with features such as callback, hotkeys, macro recording and playback etc.
 - pynput: Monitor and control input devices like KB and Mouse used for interceptors and keyloggers
 - rpa: RPA package for python
 - pyautogui: GUI automation
@@ -279,7 +286,7 @@ Task Queue / Scheduling:
 - python-crontab: uses os specific scheduler in the background
 - schedule: declarative scheduler similar to crontab, easier syntax
 
-Multi-threading / Multi-processing:
+Multi-threading / Multi-processing:\
 P.S: On non-compute oriented OS's malloc syscalls are not parallelized and hence taking heaving in this aspect will not see a speed up: https://cosmiccoding.com.au/tutorials/multiprocessing
 - uvloop: ultra fast event loop implemented with Cython
 - concurrent.futures: higher level library for multiprocessing / multithreading libraries
@@ -325,6 +332,7 @@ Webservice API:
 Webservice API modules:
 - tweepy: Twitter streaming API library
 - twitter-scraper: Twitter frontend (JavaScript) has it's own API, reverse–engineered. No API rate limits. No restrictions. Extremely fast
+- facebook-scraper: similar to twitter-scraper to scrape data without API
 - python-telegram-bot: telegram bot wrapper
 - InstaPy: Instagram selenium bot
 - google-api-python-client: google api client
@@ -363,9 +371,8 @@ Project Folder Structure Skeleton:
 Process / Best Practices:
 - recommenders: Best Practices on Recommendation Systems
 
-Data Storage / Data Passing:
+Data Storage:
 - dvc: Data version control. Git for data
-- reticulate: tools for interoperability between Python and R
 - pytables: Data storage for df from within pandas
 - pystore: Data storage for df from within pandas
 
@@ -464,7 +471,11 @@ Strategies:
 - Pyfolio: To check portfolio perf metrics
 - Mibian: Options Pricing
 
+Data Analytics:
+- Pyodide: Python with the scientific stack, compiled to WebAssembly
+
 IPython / Jupyter / Notebooks:
+- jupyterlife: JupyterLab distribution that runs entirely in the browser based on Pyodide
 - nblint: pylint for notebooks
 - nbdime: provides tools for diffing and merging of Jupyter Notebooks
     - nbdiff: compare notebooks in a terminal-friendly way
@@ -532,6 +543,17 @@ Audio Processing / Speech Recognition:
 
 ## Utilities
 
+- pint: Python units library
+
+Time and date:
+- datetime: working with date and time
+- python-dateutil: working with timezones
+- pytz: alternative to python-dateutil (has different interface compared to dateutil so dateutil is preferred)
+- dateparser: Natural language date parsing, supports multiple languages
+- arrow: offers a sensible and human-friendly approach to creating, manipulating, formatting and converting dates, times and timestamps
+- pendulum: improves API consistency over arrow
+- calender: generate calendars for any month
+
 Multi-Media:
 - pytube: lightweight, dependency-free Python library (and command-line utility) for downloading YouTube Videos
     - youtube-dl: download vidoes from multple sites
@@ -539,7 +561,7 @@ Multi-Media:
 - pyFLAC: Real-time lossless audio compression in Python based on Soundfile which in turn is based on libsndfile, CFFI and numpy
 - gdb: python module for GDB scripting
 
-### Apps
+## Apps
 - HTTPie: command-line HTTP client to make CLI interaction with web services as human-friendly as possible alternative to curl
 - ChatterBot: ML based python chatbot
 - JSMon: JavaScript Change Monitor for BugBounty
@@ -548,3 +570,4 @@ Multi-Media:
 - ngrap: app tunneling https://ngrok.com/
 - jprq: ngrok alternative
 - pywhat: `what` wrapper to identify any data such as email, domains etc in pcap or text files
+- recoverypy: search and recover blocks in block devices transparent to overwritten files
