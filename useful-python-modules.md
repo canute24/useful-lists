@@ -156,6 +156,9 @@ Password:
 
 ## General Programming
 
+OS:
+- pyRTOS: RTOS written in Python
+
 REPL:
 - jupyter-console: ipython like REPL for other kernels like C and Java
 - bpython: python repl with undo, autoformatting, autocomplete, highlighting in terminal
@@ -168,6 +171,8 @@ Compilers:
 - numexpr: extension library for scipy which can further speed up Numpy and Pandas
 - numba: similar to numexpr
 - nutika and shedskin: transpiler which convert to C++
+- Rusthon: multi-language tranpiler written in python
+- pythonjs: python to JS tranpiler offering upto 20X speeup on typed code
 
 Python Grammer:
 - collections: additional data types
