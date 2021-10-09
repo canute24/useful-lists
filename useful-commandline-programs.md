@@ -1,5 +1,9 @@
 # Useful Command Line Programs
 
+Cheatsheets:
+- https://developers.redhat.com/cheat-sheets/linux-commands-cheat-sheet
+- https://developers.redhat.com/cheat-sheets/advanced-linux-commands
+
 Terminal:
 - st: light terminal
 - urxvt: unicode rxvt terminal
