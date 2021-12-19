@@ -1,6 +1,7 @@
 ### Databases
  - Airtable.com: Spreadsheet like connected DB with size limits. Connects to fontend templates also available from Airtable
  - Notion.so: Spreadsheet like DB with templates Airtable alternative
+ - xano.com
 
 ### Distribution
  - gumroad.com
@@ -8,9 +9,12 @@
 
 ### Sites
  - webflow.com: All in one WYSIWYG site designer, CMS and hosting
+ - ghost: publishing blogs / content
  - umso,com: Wizards for site / page / templates: startup-booster
  - unicornplatform.com: Landing page builder
+ - typedream: Landing pages
  - bubble.io: Websites from templates all inclusive of DB's and automated workflows
+ 	- madewithframes.com: Bubble templates
  	- airdev.co: Team of developers building nocode sites
  		- canvas.airdev.co/bootcamp: Training for building nocode sites with bubble and option to join airdev
  - softr.io:
@@ -19,6 +23,10 @@
  - coda.io: WYSIWYG document to website
  - table2site.com: Airtable to website
  - sheet2site.com: Google sheet addon to convert site to template. Places ads banner.
+ - super.so/potion.so: Website based on notion
+
+Blockchain Sites:
+ - icme.io: No code builder hosted on Dfinity's Internet Computer
 
 ### Mobile Apps
  - glideapps.com: Apps from spreadsheets
@@ -26,7 +34,66 @@
  - adalo.com
  - thunkable.com
 
+### Login and membership
+ - circle.so: Communities
+ - lu.ma: Events and memerships
+ - MemberstackApp
+ - Memberspace
+
+### Communication
+
+Personal Communication:
+ - Mailchip
+ - sendgrid.com: Send communication through many routes include Whatsapp and SMS
+
+Social Media Scheduler:
+ - meetedgar.com
+ - hypefury.com
+ - buffer.com
+ - ilo.so: Twitter analytics
+
+Customer Reviews and UGC:
+ - Okendo
+
+### Forms and Surveys
+ - Typeforms
+ - canny.io: customer feedback amd comments
+
+### Branding and Design
+
+Templates:
+ - canva.com: Design UX and images from templates
+ - looka.com
+ - figma.com
+ - crello.com
+ - beautiful.ai: Autoformatted design when making presentations
+
+Free Stock Images:
+ - pexels.com
+ - freepik.com
+
+Mockups:
+ - smartmockups.com
+
+Copywriting:
+ - copy.ai: Copy writing based on a description based on GPT
+
+Colors:
+ - coolers.co: crate color pallets quickly
+ - color.adobe.com: create color pallet based on image, contrast and accessibility test and industry trends
+ - colorbrewer2.org: colors pallete for maps
+ - learnui.design: color pallete generator
+
+### Tools Training
+ - makerpad.co: Teaching nocode tools
+ - 100daysofnocode.com: nocode community teaching nocode tools with membership options
+ - canvas.airdev.co: Training for building nocode sites with bubble and option to join airdev
+ - appswithoutcode.com:
+
 ### Workflow Automation
+
+Internal Workflow:
+ - Retool
 
 Project Management:
  - Trello
@@ -44,26 +111,27 @@ Chatbot:
 Voice Recognition:
  - Voiceflow.com: Voice recognition apps like IVR and voice assistant apps
 
-### Individual Tools
+Time Management / Meetings:
+ - Calendly
 
-Login and membership:
- - MemberstackApp
- - memberspace
+SEO:
+ - SimilarWeb: Review traffic sources
+ - Ahrefs: Steal SEO strategy
+ - SpyFu: Get Google Ads keywords
 
-Mailing List:
- - Mailchip
+### Product Discovery
+ - Producthunt.com
+ - tinyacquisitions.com
 
-Forms and Surveys:
- - Typeforms
- - canny.io: customer feedback amd comments
+### DTC Stack
 
-### Design
- - canva.com: Design UX and images from templates
- - looka.com
- - figma.com
-
-### Tools Training
- - makerpad.co: Teaching nocode tools
- - 100daysofnocode.com: nocode community teaching nocode tools with membership options
- - canvas.airdev.co: Training for building nocode sites with bubble and option to join airdev
- - appswithoutcode.com:
+Reviews: Okendo
+Subscription: Smartrr
+Email: Klaviyo
+Customer Acquisition:
+Landing Pages: Builder
+SMS/Text: Postscript
+Influencer: Dovetale
+Customer Service: Gorgias
+Ecommerce: Shopify
+Analytics: Tydo
