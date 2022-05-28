@@ -79,6 +79,7 @@ Copywriting:
  - copy.ai: Copy writing based on a description based on GPT
 
 Colors:
+ - colormind.io
  - coolers.co: crate color pallets quickly
  - color.adobe.com: create color pallet based on image, contrast and accessibility test and industry trends
  - colorbrewer2.org: colors pallete for maps
