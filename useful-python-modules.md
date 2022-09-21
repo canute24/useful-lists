@@ -1,6 +1,6 @@
 # Useful Python Modules
 
-As Python is finding use in many different applications and huge number of modules with a similar objective but different ideology / features are introduced, a list of propular / useful modules for quick reference helps a lot.
+As Python usage across different applications increases and huge number of modules with a similar objective but different ideology / features are introduced, a list of propular / useful modules for quick reference helps a lot.
 
 The main categorisation is between python apps in the traiditonal sense vs the more recent but rapidly growing data science ecosystem. While the common sections seperated out.
 
@@ -14,6 +14,7 @@ The main categorisation is between python apps in the traiditonal sense vs the m
  - http://svaksha.github.io/pythonidae/
 
 Cheatsheets:
+ - https://nedbatchelder.com/text/which-py.html
  - https://www.programiz.com
  - https://overapi.com/python
  - https://devhints.io
@@ -46,6 +47,8 @@ Compatibility:
 
 Text Processing:
  - stdlib> string: convenience functions for text such as templates strings
+ - stdlib> re: regex library
+ - humre: Human readable regexes
  - textract: Text extraction from variety of document and images
  - texthero: Text preprocessing, representation and visualization
  - Flashtext: Fast full word replacement
@@ -69,6 +72,7 @@ PDFs:
  - PyPDFParser: Visualize and extract structured data from PDF files
  - pdfminer: for mining pdf files
  - camelot: Extract tables from text based PDF files
+ - pymupdf: high speed and feature right text and image extraction/conversion based on MuPDF library with Tesseract integration for OCR
 
 Spreadsheets:
  - openpyxl: for working with Excel 2010 format (.xlsx) excel files
@@ -79,7 +83,7 @@ Spreadsheets:
  - formulas: interpreter for parsing and calculating Excel formulae
  - xlwings: Works with new Excel formats and has macro capabilities but depends on excel
  - PyXLL: use python instead of macros in Excel making python accessible from excel (commercial)
- - gspread: API for Google Sheets
+ - gspread: API for Google Sheets like pygsheets, ezsheets
 
 Presentations:
  - python-pptx: create and edit Microsoft Powerpoint documents
@@ -103,7 +107,9 @@ JSON / HOCON:
 
 Data Parsing / Conversion:
  - stdlib> difflib: library for comparison and identify difference between patterns with many helpful methods
- - stdlib=>3.11> tomli: TOML parser
+ - stdlib> tomlib: TOML parser (=>3.11)
+ - stdlib> codecs: library for transcoding various formats
+    - codext: codecs extension featuring CLI tools for encoding/decoding anything including languages, hash, encryption, morse code and more
  - quarto: A scientific and technical publishing system built on Pandoc using markdown
     - pandoc: commandline tool to convert documents from many different formats
  - stream_unzip: steam data from zip files instead of reading / loading the entire file
@@ -134,8 +140,9 @@ SQL / Databases:
  - sqlite-utils: library and command line tool with convenience fns for working with sqlite db
  - sqlcommenter: add meta info to your SQL queries as comments which can be useful for debugging
  - Alembic: for database migration
- - sqlmodel: SQL databases in Python, designed for simplicity, compatibility, and robustness based on Pydantic and SQLAlchemy made by FastAPI authour
-    - SQLAlchemy: Most popular ORM for python
+ - SQLAlchemy: Most popular ORM for python
+    - sqlmodel: SQL databases in Python, designed for simplicity, compatibility, and robustness based on Pydantic and SQLAlchemy made by FastAPI authour
+    - ibis: Expressive analytics in Python at any scale which writes sql statements in the background to interaction with databases locally and over the web based on sqlalchemy
  - zodb: Python object-oriented database
  - piccolo: fast, user friendly ORM and query builder which supports asyncio
  - preql: interpreted relational query language that complies python to sql written in python
@@ -145,6 +152,9 @@ SQL / Databases:
  - FugueSQL: run SQL queries on pandas, spark and dash within notebook cells
  - SQLFluff: dialect-flexible and configurable SQL linter written in python
  - SQLLineage: shows source and target tables for any SQL query for complex queries
+ - CogDB: persistent graph database implemented purely in Python
+ - tinyDB: simple pure python database
+    - tinyflux: tinyDB for timeseries applications
 
 Datafiles / Tabular Data:
  - dataconverters: Unified python library and command line interface to convert data from one format to another (especially tabular data)
@@ -216,6 +226,7 @@ GUI:
  - mercury: easily convert Python notebook to web app and share with others
  - bloxs: Display your data in an attractive way in your notebook works well with mercury
  - litemark: Lightweight Markdown dialect for Python desktop apps
+ - CustomTkinter: based on Tkinter, provides new, modern and fully customizable widgets.
 
 Terminal-UI:
  - stdlib> textwrap: display easily formatted text in console
@@ -263,7 +274,7 @@ Cryptography / Hashing / Password:
 
 OS:
  - pyRTOS: RTOS written in Python
- - xonsh: shell language and command prompt
+ - xonsh: shell and command prompt
 
 REPL:
  - jupyter-console: ipython like REPL for other kernels like C and Java
@@ -272,6 +283,7 @@ REPL:
 
 Compilers / Decompilers:
  - dis: disassembiling CPython bytecode
+ - pycom: Python compiler, down to native code, using C++
  - mypyc: compiles Python modules to C extensions using standard Python type hints to generate fast code
  - pypy: python JIT compiler
  - pyston: JIT with upto 30% improvement on server benchmarks and more for simpler programs
@@ -291,6 +303,7 @@ Python Grammar:
  - operator: python operators and convenience functions such as itemgetter, attrgetter, methodcaller for sorting with key and filtering data
  - collections: additional data types
  - itertools/functools - tools for using iterators and functions as functional progamming
+    - more_itertools: extends itertools
  - functools.singledispatch (>=3.8)/singledispatchmethod(<3.8): generic function consisting of multiple functions implementing the same operation for different data types determining which implementation to run based on the type of a "single" argument
  - multipledispatch: full featured multiple dispatch
  - runtype: Utilities for simplyfying run-time type validation and multiple dispatch
@@ -383,6 +396,7 @@ Formatting / Styling:
 Logging:
  - structlog: structured logging library
  - loguru: easily configurable logging library with debugging info in log
+ - picologging: drop-in replacement for stdlib>logging high-performance (4-10x) logging library for Python
 
 Debugging:
  - stdlib> print statement: f"{hello=}" # >=python3.8
@@ -484,10 +498,12 @@ Task Queue / Message Queue / Scheduling:
  - dramatiq: background task processing library for Python with a focus on simplicity, reliability and performance
  - celery: Task queues used as a mechanism to distribute work across threads or machines
  - pika: pure-Python implementation of the AMQP 0-9-1 protocol including RabbitMQ’s extensions
+ - huey: little task queue based on redis, sqlite, file-system, or in-memory storage
  - APScheduler: very advanced scheduler
  - sched: simple scheduler
  - python-crontab: uses os specific scheduler in the background
  - schedule: declarative scheduler similar to crontab, easier syntax
+ - rocketry: modern, simple, clean and extensive scheduling framework for Python applications
 
 Multi-threading / Multi-processing:\
  P.S: On non-compute oriented OS's malloc syscalls are not parallelized and hence taking heaving in this aspect will not see a speed up: https://cosmiccoding.com.au/tutorials/multiprocessing
@@ -513,6 +529,7 @@ Distributed Computing:
  - adb_shell: originated from python-adb; implements ADB shell and FileSync functionality
  - ppadb: pure python implementation of adb client which interfaces with the adb server on PC
  - mtkclient: unofficial MTK reverse engineering and flash tool
+ - flet: Build flutter apps in python and deploy to any platform
 
 ### Electronics
 
@@ -525,6 +542,7 @@ Hardware Interface:
  - pyserial: python library for interacting with serial port over a variety of different devices: old-style serial ports, Bluetooth dongles, infra-red ports etc
  - PyUSB: access USB devices; relies on a native system library
  - USPP: access serial portsv which only works in Windows for now
+ - belay: enables the rapid development of projects that interact witg a micropython-compatible board from a PC running python through some connection
 
 Graphics:
  - lvgl: Light and Versatile Graphics Library for microcontrollers with micropython bindings
@@ -564,6 +582,7 @@ Webservice API libraries:
  - google-api-python-client: google api client
  - google-auth-httplib2 / google-auth-oauthlib: required for authentik
  - google-workspace: unofficial high level Python API wrapper for some of the productivity based Google APIs, that is focused on simplicity
+ - simple-youtube-api: Youtube API wrapper for python, making it easier to search and upload your videos and requires google API keys
  - newspaper3k: data from 1000's of newspapers with metadata
  - pygooglenews: A python wrapper of the Google News RSS feed
  - wikipedia: wikipedia API
@@ -627,6 +646,7 @@ Mathematics:
  - handcalcs: convert or render mathematicals equations in python directly to mathtext / latex
  - Aesara: define, optimize, and efficiently evaluate mathematical expressions involving multi-dimensional arrays
  - ortools: Google OR Tools for linear programming, contraint programming and other AI methods with a consistent API
+ - cvxpy: convex optimization problems based on open source solvers OSQP, SCS, and ECOS
 
 Statistics:
  - stdlib> statistics: statistical functions
@@ -754,6 +774,7 @@ Plotting:
  - bqplot: interactive 2-D visualization system for Jupyter, based on the constructs of the Grammar of Graphics
  - Plotnine: ggplot2 inspired plotting library
  - Altair: Vega based Plotly alternative
+ - observableplot: concise API for exploratory data visualisation
  - gleam: interactive web visualisations
  - Pygal: SVG Plots
  - Plotly: Web plots
@@ -763,6 +784,7 @@ Plotting:
  - Pandas-Bokeh: Bokeh plotting backend for Pandas, GeoPandas and Pyspark DataFrames
  - CMasher: a collection of scientific colormaps and utility functions
  - pyUpSet: Creating UpSet plots in Python but old and poor documentation
+ - pyqtgraph:  graphics and GUI library for use in mathematics / scientific / engineering applications written entirely in python and pyqt/pyside for fast updating graphs which matplotlib can't do
 
 Matplotlib:
  - https://matplotlib.org/mpl-third-party/
@@ -846,6 +868,7 @@ IPython / Jupyter / Notebooks:
  - ipycanvas: lightweight, fast and stable library exposing the browser's Canvas API to IPython
  - nblint: pylint for notebooks
  - nb_black: Black code formatting for notebooks
+ - jupyterlab-code-formatter: plugin to facilitate invocation of code formatters such as black and isort
  - nbdime: provides tools for diffing and merging of Jupyter Notebooks
     - nbdiff: compare notebooks in a terminal-friendly way
     - nbmerge: three-way merge of notebooks with automatic conflict resolution
@@ -863,6 +886,7 @@ IPython / Jupyter / Notebooks:
  - voila: jupyter notebook dashboards based on ipywidgets
  - nbinteract: Convert notbooks with widgets to run on remote binder server with full interactivity
  - jupytext: code is saved in a specified format (py, md, Rst etc.) and is synced to ipynb on load
+ - jupyter-book: create publication quality books in Jupyter especially with mathematical notation
  - nbdev: allows you to develop a python library in Jupyter Notebooks with features such as debugging, refactoring, writing tests, create docs, publish packages etc.
  - jupyter-notify: notification when long running notebooks finish running
  - xeus-python: ipykernel alternative for jupyter
@@ -890,21 +914,27 @@ Charts:
 
 Technical Analysis:
  - talib: Technical Analysis
+ - talipp: Technical Analysis library for O(1) iterative
  - pandas-ta: Technical Analysis Indicators - Pandas TA is an easy to usePandas Extension with 120+ Indicators
  - finta: Common financial technical indicators implemented in Pandas
 
 Strategies:
  - Backtrader: Backtesting
  - backtesting.py
- - Zipline: Backtesting
+ - Zipline: Backtesting, accquired by Robinhood
  - orats: US options analysis API
  - qf-Lib: provides an advanced event driven backtester and a set of high quality tools for quantitative finance by CERN
  - autotrader: development platform for automated trading systems - from backtesting to optimisation to livetrading
+ - Vectorbt: helps find your trading edge, using the fastest engine for backtesting, algorithmic trading, and research
+ - OctoBot: cryptocurrency trading bot for TA, arbitrage and social trading with an advanced web interface
+ - Gemini: cryptocurrency backtesting engine that focuses on simplicity
+ - Quantdom: backtesting framework that let's you focus on modeling financial strategies, portfolio management, and analyzing backtests
 
 Fundamental Analysis:
  - numpy-financial: collection of elementary financial functions for numpy which were removed from numpy
  - opstrat: option pricing and plotting
  - mibian: Options Pricing models
+ - py_vollib: library for calculating option prices, implied volatility and greeks
  - quantsbin: pricing and plotting of vanilla option prices, greeks and various other analysis
 
 AI/ML:
@@ -915,6 +945,7 @@ Portfolio Management / Testing:
  - quantstats: analytics for quants with stats, plots and reports
  - Qlib: AI-oriented quantitative investment platform for testing training executing tracking algos & strategies by Microsoft
  - Pyfolio: To check portfolio perf metrics
+ - financepy: pricing and risk-management of Financial Derivatives, including fixed-income, equity, FX and credit derivatives
 
 Personal Finance:
  - beancount: Personal account keeping in python rewrite of core to C++ in v3
@@ -946,6 +977,8 @@ Machine Learning Tools:
 MLOps:
  - Feast: an operational data system for managing and serving machine learning features to models in production
  - modelkit: minimalist yet powerful MLOps library for Python, built for people who want to deploy ML models to production
+ - mlflow: open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry
+ - evidently: tools to evaluate, test and monitor machine learning models
 
 Machine Learning Wrapper Libraries / AutoML:
  - blockly: googles visual AI/ML editor for python and ML
@@ -997,6 +1030,12 @@ Image Processing / Character Recognition (OCR) / Image Recognition / Computer Vi
  - imutils: image maniputlation utilities
  - opencv-contrib:
     - OpenCV-Python: Open computer vision library
+ - SimpleCV: framework with simple API for building computer vision applications
+ - mahotas: computer vision and image processing library with over 100 functions and counting
+ - simpleitk: library for Insight Toolkit developed for biomedical sciences
+ - pgmagick: API for graphicsmagick a imagemagick fork
+ - pycairo: API for Cairo vector library
+ - docquery: library and command-line tool that makes it easy to analyze semi-structured and unstructured documents (PDFs, scanned images, etc.) using large language models (LLMs)
 
 Audio Processing / Speech Recognition:
  - pyttsx3: Offline tts modules bundled with sapi5, nsss, espeak engines
@@ -1021,13 +1060,18 @@ Time and date:
  - convertdate: convert date between various calendar and holiday list
  - holidays: holiday list
 
-Media:
+Web:
  - youtube-dl: download vidoes from multple sites
  - pytube: download videos from youtube
+ - unzip-http: extract files from remote .zip files without downloading entire archive
 
 Audio:
  - pyFLAC: Real-time lossless audio compression in Python based on Soundfile which in turn is based on libsndfile, CFFI and numpy
  - Pedalboard: Spotify’s Audio Effects Library for Python
+ - python-vlc: play media using VLC from python
+
+Video:
+ - deffcode: OpenCV like API for FFmpeg
 
 Convenience:
  - Tenacity: maintained fork of `retrying` which retries a fn with custom exception actions
