@@ -1069,6 +1069,7 @@ Audio:
  - pyFLAC: Real-time lossless audio compression in Python based on Soundfile which in turn is based on libsndfile, CFFI and numpy
  - Pedalboard: Spotify’s Audio Effects Library for Python
  - python-vlc: play media using VLC from python
+ - pyaudio: bindings for PortAudio v19, the cross-platform audio I/O library, allows computer mic to work with python
 
 Video:
  - deffcode: OpenCV like API for FFmpeg
