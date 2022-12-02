@@ -28,6 +28,7 @@ System:
  - stdlib> shutil: Shell utility function like file properties and manipulation
  - stdlib> pathlib: Object-oriented filesystem paths
  - stdlib> glob: glob operator for files as python list
+   - glob2: capture patterns and supports recursive wildcards
  - stdlib> webbrowser: Convenient Web-browser controller
  - stdlib> mmap: map disk to memory to read large files without completely loading them to RAM
  - fileless-elf-exec: Execute ELF files without dropping them on disk directly from memory
@@ -104,6 +105,7 @@ JSON / HOCON:
  - jsonpath-ng: traverse JSON elements in `.` (dot) notation (JSON notation) link in javascript
  - jpath: access lists and dicts with `.` (dot) notation like JSON with wildcard, slicing and conditionals support
  - nvelope: Define your JSON schema as Python dataclasses with custom checks and defined conversions from JSON to dict
+ - jsonschema: JSON Schema validation
 
 Data Parsing / Conversion:
  - stdlib> difflib: library for comparison and identify difference between patterns with many helpful methods
@@ -124,6 +126,7 @@ Data Parsing / Conversion:
     - Pickle / cpickle: for serializing objects for storage
  - fsspec: provides an abstract filesystem with a consistent API for file access
  - PyYAML: YAML parser
+ - strictyaml: Type-safe YAML parser and validator with schema for type checking and creating YAML from dicts and lists
  - yamale: schema and validator for YAML
  - rst2pdf: creates PDF documents from your ReStructured Text markup
 
@@ -131,6 +134,7 @@ Data validation:
  - cerberus: powerful yet simple and lightweight data validation functionality out of the box and is designed to be easily extensible, allowing for custom validation
  - pydantic: data parsing and validation using python type hints making it easier to write classes
     - pydbantic: single model for shaping, creating, accessing, storing data within a Database
+ - datashape: language defining a data description protocol
  - marshmellow: ORM/ODM/framework agonostic library for converting complex datatypes such as objects to and from Python datatypes
  - great_expectations: data validation framework
  - pandera: statistical data validation for pandas
@@ -153,7 +157,7 @@ SQL / Databases:
  - SQLFluff: dialect-flexible and configurable SQL linter written in python
  - SQLLineage: shows source and target tables for any SQL query for complex queries
  - CogDB: persistent graph database implemented purely in Python
- - tinyDB: simple pure python database
+ - tinyDB: simple pure python database with a clean API that just works without lots of configuration
     - tinyflux: tinyDB for timeseries applications
 
 Datafiles / Tabular Data:
@@ -189,6 +193,7 @@ Web Scraping:
  https://httpbin.org/headers
  http://webnumbr.com/
  - BeautifulSoup: parser for xml / html
+ - parsel: extract and remove data from HTML and XML using XPath and CSS selectors, optionally combined with regular expressions
  - elemental: makes Selenium automation faster and easier by adding automatic waits and common missing usecases from selenium
     - Selenium – Browser automation
  - selenium-wire: give access to underlying requests made by the browser
@@ -203,6 +208,7 @@ Email:
  - stdlib> email: For managing email messages. With this we will setup the email message itself, including subject, body, and attachments.
  - stdlib> smtplib: Handles the SMTP connection
  - stdlib> IMAPlib: working with IMAP connections
+ - redbox/redmail: easier email management and sending library
 
 ### GUI / Interface
 
@@ -211,9 +217,11 @@ Indicators:
 
 GUI:
  - win10toast: Notifications in windows or win10toast-click for clickable version
+ - gooey: Turn (almost) any Python command line program into a full GUI application with one line based on wxpython
  - PyWebIO: simple web app interface / GUI generation in python script
  - pyrustic: framwwork for making GUI's uses tk
  - PySimpleGUI: Simple python GUI framework using tkinter, Qt, Remi or WxPython
+ - PyMsgBox: simple, cross-platform, pure Python module for messageboxes
  - qtwin11: Windows 11 theme for Qt
  - edifice: makes it simple to build a fully reactive UI based on Javascript libraries such as React
  - re-wx: library for building modern declarative desktop applications in WX
@@ -269,6 +277,7 @@ Cryptography / Hashing / Password:
  - hmac: used to verify integrity and authenticity of message and doesn’t have the properties required for password hashing
  - keyring: by default uses your user account login password for encryption, so it gets automatically unlocked when you login and you therefore don’t have worry about extra password
  - pycryptodome/pycryptodomex: self-contained low-level cryptographic primitives
+ - itsdangerous: safely pass data to untrusted environments and back with crypto sign, timestamp and compression features
 
 ## General Programming
 
@@ -301,13 +310,13 @@ Python Grammar:
  - __future__: import features implemented in newer versions of python
  - stdlib> atexit: register function to run at sys.exit() to cleanly terminate
  - operator: python operators and convenience functions such as itemgetter, attrgetter, methodcaller for sorting with key and filtering data
- - collections: additional data types
+ - collections: additional data types and utiliy functions for container data types
  - itertools/functools - tools for using iterators and functions as functional progamming
-    - more_itertools: extends itertools
+    - more_itertools: extends itertools with more routines for operating on iterables
+ - toolz (itertoolz/functoolz/distoolz) - supplementary to above which implements some missing functionality
  - functools.singledispatch (>=3.8)/singledispatchmethod(<3.8): generic function consisting of multiple functions implementing the same operation for different data types determining which implementation to run based on the type of a "single" argument
  - multipledispatch: full featured multiple dispatch
  - runtype: Utilities for simplyfying run-time type validation and multiple dispatch
- - toolz (itertoolz/functoolz/distoolz) - supplementary to above which implements some missing functionality
  - operator: contains a large number of efficient functions corresponding to Python operators
  - ast: sytax parsing and manipulation for linting, patching, refactoring
  - astunparse: unparse changes done using `ast` module to convert to python code
@@ -351,27 +360,59 @@ Build / CI/CD tools:
  - semantic-release: automatically updates the changelog, increments the version according to a standard called Semantic Versioning, and publishes the project to PyPI
     - commitizen: guides you through the steps needed to automatically create a commit message in the format of a Conventional Commit which semantic release uses to increment the version automatically
 
-Obfuscator / code compactors:
+Obfuscator / Code compactors:
  - python-minifier: Transform Python source code into it's most compact representation
 
-Linting:
- - pylint: superset of flake8
- - flake8: check for errors and style wrapper on pyflakes and few other tools
-    - pyflakes: A simple program which checks Python source files for error
-    - mccabe: code complexity checker
+Formatting / Styling:
+ - teyit: Formatter for your Python unit tests specifically unittest
+ - black: automatic code formatter
+ - yapf: highly configurable code formatter from Google that can use multiple code styles
+ - autopep8: built on pycodestyle for autoformatting code
     - pycodestyle: formally called pep8
+ - pydocstyle: check doc string formatting
+ - pydocstringformatter: check doc string formatting
+ - ssort: Tool for sorting top level statements such as classes moved to top
+ - isort: automatic import formatter
+    - seed-isort-config: statically populate the known_third_party part of the .isort.cfg
+ - reorder_python_imports: rewrites source to reorder python imports with the aim of simplyfying merges by putting one import per line
+ - table-format: formats list of lists as a fixed width table
+ - pyupgrade: tool (and pre-commit hook) to automatically upgrade syntax for newer versions of python inc fstrings
+ - setup-py-upgrade: upgrade a setup.py to declarative metadata
+ - flynt: command line tool to automatically convert old "%-formatted" and .format() strings into f-strings'
+
+Refactoring:
+ - Bowler: refactoring tool for manipulating Python at the syntax tree level
+ - rope: refactoring library which is light on dependencies like npm which is required for PyRight/PyLance
+ - vulture: find dead/unused code
+ - refurb: tool for refurbishing and modernizing Python codebases suggesting code improvements
+
+Linting:
+ - pylama: wrapper for multiple linters/checkers used for code audit
+ - pylint: superset of flake8
+    - flake8: check for errors and style wrapper on pyflakes and few other tools
+       - autoflake: removes unused imports of stdlib and unused variables reported by pyflakes
+         - pyflakes: A simple program which checks Python source files for error
+       - mccabe: code complexity checker
+       - pycodestyle: formally called pep8
  - pygrep: Find python identifiers in code files where they are imported
  - slotscheck: Find mistakes in your __slots__ definitions
+ - Pyroma: packing linter point out issues related to packaging your code for distribution on PyPI with properly formatted descriptions, versions, and meta data fields
+ - bandit: find common security issues in Python code
+ - radon: remove dead code based on mccabe
+ - vulture: remove dead code
+ - eradicate: remove dead code
 
-Type Checking:
+Type Checking (static):
  - stdlib> typing: type hinting and annotations with modern IDE's
- - pyannotate: Insert annotations into your source code based on call arguments and return types observed at runtime
- - MonkeyType: collects runtime types of function arguments and return values, and can automatically generate stub files or even add draft type annotations directly to your code from Instagram
+ - typing_extensions: Enable use of new type system features on older Python versions
+ - pyannotate: insert annotations into your source code based on call arguments and return types observed at runtime
+ - autotyping: tool to add type hints for various cases
+ - MonkeyType: collects runtime types of function arguments and return values, and can automatically generate stub files or even add draft type annotations directly to your code by Instagram
  - pytype: checks and infers types without requiring type annotations
  - mypy: optional static type checker
  - pytype: checks and infers types for your Python code - without requiring type annotations also support cross function inference which is not available with mypy and also allows runtime lenience compared to mypy(windows support pending) (Google)
  - pyre: static type checker (Facebook)
- - pyright: static type checker (Microsoft)
+ - pyright: static type checker (Microsoft) has external dependencies
  - attrs: creating dataclasses with less boilerplate based on type hints on which stdlib dataclasses is based on
 
 Dynamic Type Checking:
@@ -381,17 +422,6 @@ Dynamic Type Checking:
  - ducktype
  - strictconf
  - pytypes
-
-Formatting / Styling:
- - teyit: Formatter for your Python unit tests specifically unittest
- - black: automatic code formatter
- - yapf: highly configurable code formatter from Google that can use multiple code styles
- - autopep8: built on pycodestyle for autoformatting code
-    - pycodestyle: formally called pep8
- - pydocstyle: check doc string formatting
- - ssort: Tool for sorting top level statements such as classes moved to top
- - isort: automatic import formatter
-    - seed-isort-config: statically populate the known_third_party part of the .isort.cfg
 
 Logging:
  - structlog: structured logging library
@@ -426,25 +456,22 @@ Traceback:
  - stackprinter: ultratb like tracebacks
  - frosch: runtime error debugger with formatted last line with variable list
 
-Refactoring:
- - Bowler: refactoring tool for manipulating Python at the syntax tree level
- - rope: refactoring library
- - vulture: find dead/unused code
- - bandit: find common security issues in Python code
-
 Caching:
  - functools> lru_cache: caching recent calculations
  - functools> cache: lru_cache enhancement (>=python3.9.2)
 
 Profiling:
  - stdlib> time python <script_name.py>
- - stdlib> python -m timeit -s <script_name.py>
- - stdlib> python -X importtime <script_name.py>
+ - stdlib> python -m timeit -s <setup_code> <script_name.py> # setup_code will not be included in benchmark
+ - stdlib> python -X importtime -S <script_name.py> # -S This will “disable the import of the module site and the site-dependent manipulations of sys.path that it entails” hence non-stdlib imports may fail
  - stdlib> tracemalloc: tracks every individual memory blocks allocated by the Python interpreter (30% perf hit)
  - stdlib> resource: provides basic controls for resources that a program allocates (point in time reporting needs more code for running another monitoring thread for profiling multiple points but imprecise if sampling duration is too long)
- - cProfile: profiler part of stdlib
+ - stdlib> pstats: cProfiler data analysis class with analysis methods
+ - stdlib> cProfile: function profiler part of stdlib
+ - hyperfine: not a module but can be good to get objective benchmarks for python apps or any other program
+ - pyperf: similar syntax to timeit but with much better features subcommands for analysing results defacto std for benchmarks used by PSF
  - line_profiler: profile the time each individual line takes to execute
- - memory_profiler: monitoring memory consumption in a process or you can use it for a line-by-line analysis of the memory consumption. psutil (optional requirement) significantly improves its performance.s
+ - memory_profiler: monitoring memory consumption in a process or you can use it for a line-by-line analysis of the memory consumption. psutil (optional requirement) significantly improves its performance
  - profilehooks: multiple profiling options
  - QuickPotato: create automated tests for profiling performance
  - pyinstrument: online profiler
@@ -461,6 +488,8 @@ RPA:
  - rpa: RPA package for python
  - pyautogui: GUI automation
  - pywinauto: set of python modules to automate the GUI on Windows and Linux
+ - mouseinfo: display XY position and RGB color information for the pixel currently under the mouse
+ - pygetwindow: cross-platform module for obtaining GUI information on application's windows
  - robotframework: RPA language implemented in python
 
 Configuration Management:
@@ -542,6 +571,10 @@ Hardware Interface:
  - pyserial: python library for interacting with serial port over a variety of different devices: old-style serial ports, Bluetooth dongles, infra-red ports etc
  - PyUSB: access USB devices; relies on a native system library
  - USPP: access serial portsv which only works in Windows for now
+
+Micropython:
+ - micropython: python for microcontrollers
+ - pycopy: minimalist and memory-efficient Python dialect which works on microcontrollers but in beta
  - belay: enables the rapid development of projects that interact witg a micropython-compatible board from a PC running python through some connection
 
 Graphics:
@@ -580,7 +613,7 @@ Webservice API libraries:
  - InstaPy: Instagram selenium bot
  - pytrends: unofficial google trends api scraped from trends site
  - google-api-python-client: google api client
- - google-auth-httplib2 / google-auth-oauthlib: required for authentik
+ - google-auth-httplib2 / google-auth-oauthlib: required for authentication
  - google-workspace: unofficial high level Python API wrapper for some of the productivity based Google APIs, that is focused on simplicity
  - simple-youtube-api: Youtube API wrapper for python, making it easier to search and upload your videos and requires google API keys
  - newspaper3k: data from 1000's of newspapers with metadata
@@ -608,9 +641,10 @@ Endpoint Frameworks:
 
 Django: web framework for building a complex, data-driven websites
  - cookiecutter-django: framework for jumpstarting production-ready Django projects quickly
+ - django-upgrade: automatically upgrade your Django projects to a specific version of Django
  - whitenoise: Radically simplified static file serving for Python web apps
  - django-rest-framework: powerful and flexible toolkit for building Web APIs using REST
- - django-ninja: web framework for building APIs with Django and Python 3.6+ type hints
+ - django-ninja: FastAPI-inspired web framework for building APIs from Django views and Python 3.6+ type hints
  - graphene-django: for creating GraphQL API
  - django-crispy-forms: provides a tag and filter that lets you quickly render forms in a div format while providing an enormous amount of capability to configure and control the rendered HTML
  - django-pymemcache: Django cache backend that uses Pinterest's pymemcache library as the backend
@@ -643,10 +677,13 @@ Mathematics:
  - stdlib> fractions: conversion of real numbers to fractions and wise versa with high precision
  - sympy: symbolic fuctions which be used for solving math expressions such as intergals, limits
  - theano: define, optimize, and efficiently evaluate mathematical expressions involving multi-dimensional arrays, built on top of NumPy and allows use of GPU for fast calculations
+ - latexify_py: package that generates LaTeX math description from Python functions
  - handcalcs: convert or render mathematicals equations in python directly to mathtext / latex
  - Aesara: define, optimize, and efficiently evaluate mathematical expressions involving multi-dimensional arrays
  - ortools: Google OR Tools for linear programming, contraint programming and other AI methods with a consistent API
  - cvxpy: convex optimization problems based on open source solvers OSQP, SCS, and ECOS
+ - kiwisolver: efficient C++ implementation of the Cassowary constraint solving algorithm for LPP
+ - pycosat: provides efficient Python bindings to picosat SAT solver on the C level
 
 Statistics:
  - stdlib> statistics: statistical functions
@@ -658,6 +695,7 @@ Statistics:
  - ppscore: Predictive Power Score (PPS) replacement for corelation to detect relationships using decision trees ML model from sklearn internally
  - bayesian-histograms: for estimation of binary rare event rates, with fully automated bin pruning
  - DoWhy: An end-to-end library for causal inference
+ - PyStan is a Python interface to Stan, a state-of-the-art platform for statistical modeling and high-performance statistical computation using Bayesian inference
 
 Time Series:
  - timesynth: Multipurpose Library for Synthetic Time Series Generation in Python
@@ -973,6 +1011,7 @@ Machine Learning Tools:
  - Hummingbird: compile trained traditional ML models into tensor computations PyTorch
  - dirty_cat: facilitates machine-learning on non-curated categories: robust to morphological variants, such as typos
  - PostgresML: end-to-end machine learning system which enables you to train models and make online predictions using only SQL
+ - PyMDE: compute vector embeddings of items, such as images, biological cells, nodes in a network, or any other type of abstract object generalizing well-known methods like PCA, spectral embedding, multi-dimensional scaling for use in machine learning
 
 MLOps:
  - Feast: an operational data system for managing and serving machine learning features to models in production
@@ -1000,6 +1039,7 @@ Machine Learning Wrapper Libraries / AutoML:
 
 Machine Learning Frameworks:
  - scikit-learn: algorithms of machine learning and data mining tasks
+   - imbalanced-learn: relying on scikit-learn (imported as sklearn) and provides tools when dealing with classification with imbalanced classes
  - PyGBM: Gradient Boosting Decision Trees
  - XGBoost/LightGBM/CatBoost: optimised, scalable and fast implementations of gradient
  - lleaves: LLVM-based compiler for LightGBM decision trees which converts trained LightGBM models to optimized machine code, speeding-up prediction by ≥10
@@ -1018,9 +1058,10 @@ NLP:
  - simple_elmo: Simple ELMO model
  - gensim: robust semantic analysis, topic modeling and vector-space modelling
  - nlp: lightweight and extensible library to easily share and access datasets and evaluation metrics for Natural Language Processing (NLP) based on tensorflow dataset tfds
- - transformers: State-of-the-art Natural Language Processing including GPT2 huggingface
  - wordcloud: create wordclouds
  - easynlp: NLP library based on PyTorch from Alibaba
+ - transformers: State-of-the-art Natural Language Processing including GPT2 huggingface
+ - txtai: AI-powered semantic search based on latest techniques as opposed to keyword based libraries
 
 Image Processing / Character Recognition (OCR) / Image Recognition / Computer Vision:
  - scikit-image: collection of algorithms for image processing
@@ -1084,6 +1125,9 @@ Uncategorised:
  - uuid: quick and easy way to generate Universally Unique IDs
  - gdb: python module for GDB scripting
  - zipfly: writing large ZIP archives without memory inflation
+
+Data:
+ - namematch: Tool for probabilistically linking the records of individual entities (e.g. people) within and across datasets
 
 ## Apps
  - HTTPie: command-line HTTP client to make CLI interaction with web services as human-friendly as possible alternative to curl
