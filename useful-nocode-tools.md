@@ -28,11 +28,15 @@
 Blockchain Sites:
  - icme.io: No code builder hosted on Dfinity's Internet Computer
 
+Website Analytics:
+ - Hotjar
+
 ### Mobile Apps
  - glideapps.com: Apps from spreadsheets
  - appsheet.com: Google product similar to glide
  - adalo.com
  - thunkable.com
+ - jotform
 
 ### Login and membership
  - circle.so: Communities
@@ -67,16 +71,20 @@ Templates:
  - figma.com
  - crello.com
  - beautiful.ai: Autoformatted design when making presentations
+ - bannerbear: autogenerates social media visuals and has integration API
 
-Free Stock Images:
+Free Stock Images/Videos:
  - pexels.com
  - freepik.com
 
 Mockups:
  - smartmockups.com
 
-Copywriting:
+AI Tools:
  - copy.ai: Copy writing based on a description based on GPT
+ - murf.ai: Transcription, TTS
+ - aiva.ai: Music generation, soundtracks
+ - pictory.ai: Insert video clip / extract highlights from long videos
 
 Colors:
  - colormind.io
@@ -110,7 +118,7 @@ Chatbot:
  - landbot.com: chats bots with whatsapp integration
 
 Voice Recognition:
- - Voiceflow.com: Voice recognition apps like IVR and voice assistant apps
+ - Voiceflow.com: conversational voice recognition apps like IVR and voice assistant apps
 
 Time Management / Meetings:
  - Calendly
@@ -127,7 +135,7 @@ SEO:
 ### DTC Stack
 
 Reviews: Okendo
-Subscription: Smartrr
+Subscription: Smartrr, Outseta
 Email: Klaviyo
 Customer Acquisition:
 Landing Pages: Builder
