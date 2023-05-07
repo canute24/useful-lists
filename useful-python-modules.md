@@ -4,8 +4,7 @@ As Python usage across different applications increases and huge number of modul
 
 The main categorisation is between python apps in the traiditonal sense vs the more recent but rapidly growing data science ecosystem. While the common sections seperated out.
 
-## Other Similar Collations
-
+Other Similar Collations
  - https://github.com/vinta/awesome-python/
  - https://github.com/ml-tooling/best-of-web-python
  - https://github.com/florimondmanca/awesome-asgi
@@ -36,15 +35,18 @@ System:
  - sh: full-fledged subprocess replacement that allows you to call any program as if it were a function
  - WinSys: Python tools for the Windows Administrator
  - pyperclip: clipboard access
+ - win32clipboard: part of win32api
  - pywin32: provides access to many of the Windows APIs from Python
      - win32com: Windows COM object and client
      - win32api: Windows system calls
  - py-filelock: platform independent file lock that supports the with-statement
 
-Compatibility:
- - reticulate: tools for interoperability between Python and R
+Interoperability:
+ - reticulate: tools for interoperability between Python and R in R
  - rpy/rpy2: calling R from python
  - compatlib: Python utilities for writing cross-version compatible libraries
+ - pybind11: C++/python bindings with full C++ coverage
+ - nanobind: same as above with limited C++ coverage to make it faster
 
 Text Processing:
  - stdlib> string: convenience functions for text such as templates strings
@@ -92,7 +94,8 @@ Presentations:
  - gslides: Creating charts in Google slides
 
 Documentation:
- - sphinx: Docs generator
+ - docutils: convert rst to any other rich text markup
+   - sphinx: Docs generator
  - mkdocs: static site generator for documentation
     - mkdocstrings: Automatic documentation from sources, for MkDocs
  - pycco: port of Docco which generates simple docs from code
@@ -134,6 +137,7 @@ Data Parsing / Conversion:
  - rows: work with anytype of tabular data
 
 Data validation:
+ - msgspec: fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML
  - cerberus: powerful yet simple and lightweight data validation functionality out of the box and is designed to be easily extensible, allowing for custom validation
  - pydantic: data parsing and validation using python type hints making it easier to write classes
     - pydbantic: single model for shaping, creating, accessing, storing data within a Database
@@ -186,7 +190,7 @@ HTTP / TCP / UDP / Websocket:
     - requests-cache: Caching for requests library
  - mechanize: a browser that implements the urllib2.OpenerDirector interface with state, including navigation history, HTML form state, cookies, etc based on perl's WWW::Mechanize
  - packet-sniffer: pure-Python network packet sniffer based on PF_PACKET (Linux only)
- - httpx: next generation HTTP client for Python based on requests
+ - httpx: next generation HTTP client based on requests with async, HTTP/2 support, connection & response pooling etc
  - aiohttp: asynchronous http client
  - python-webrtc: Python extension that provides bindings to WebRTC M92
 
@@ -198,6 +202,7 @@ Web Scraping:
  https://pixelscan.net/
  https://httpbin.org/headers
  http://webnumbr.com/
+ https://jsonplaceholder.typicode.com/
  - BeautifulSoup: parser for xml / html
  - parsel: extract and remove data from HTML and XML using XPath and CSS selectors, optionally combined with regular expressions
  - elemental: makes Selenium automation faster and easier by adding automatic waits and common missing usecases from selenium
@@ -225,6 +230,7 @@ GUI:
  - win10toast: Notifications in windows or win10toast-click for clickable version
  - gooey: Turn (almost) any Python command line program into a full GUI application with one line based on wxpython
  - PyWebIO: simple web app interface / GUI generation in python script
+ - pyvibe: create web pages or web apps from python using web components from tailwind
  - pywebview: GUI for python apps in JS, HTML and CSS
    - neutron: create webbased frontend in python to run in pywebview
  - pynecone-io: full-stack framework that makes it easy to build and deploy web apps
@@ -238,6 +244,8 @@ GUI:
  - Toga: Python native, OS native, cross platform GUI toolkit part of BeeWare suite
  - atlas-python: Atlas toolkit is the easiest way to add a web-based graphical user interface
  - streamlit: create beautiful, performant apps in a few hours in pure Python
+ - nicegui: streamlit type simple UI with minimal config
+ - justpy:  object-oriented, component based, high-level Python Web Framework that requires no front-end programming. All design elements can be styled in Python but more low level than nicegui
  - gradio: deploy ML models, fns, API with UI
  - voila: GUI's from jupyter notebook based on ipywidgets
  - mercury: easily convert Python notebook to web app and share with others
@@ -301,6 +309,9 @@ REPL:
 
 Compilers / Decompilers:
  - dis: disassembiling CPython bytecode
+ - numba: similar to numexpr
+ - numexpr: extension library for scipy which can further speed up Numpy and Pandas
+ - shedskin: fastest restricted python to C++ compiler
  - pycom: Python compiler, down to native code, using C++
  - mypyc: compiles Python modules to C extensions using standard Python type hints to generate fast code
  - hpy: new API for extending Python in C with zero overhead, faster, universal binaries, nicer API and more
@@ -310,9 +321,7 @@ Compilers / Decompilers:
  - cinder: python JIT complier from Instagram
  - skybison: ground up high performance version of python from Instagram
  - codon: python compiler using LLVM with speed comparable to C
- - numexpr: extension library for scipy which can further speed up Numpy and Pandas
- - numba: similar to numexpr
- - nutika and shedskin: transpiler which convert to C++
+ - nutika: transpiler which convert to C++
  - Rusthon: multi-language tranpiler written in python
  - pythonjs: python to JS tranpiler offering upto 20X speeup on typed code
  - taichi: parallel programming language for high-performance numerical computations embedded in Python, and its just-in-time compiler offloads compute-intensive tasks to multi-core CPUs and massively parallel GPUs
@@ -362,8 +371,8 @@ Build / CI/CD tools:
  - Deprecated setup.py: https://pypa-build.readthedocs.io/en/stable/
  - setup.cfg: https://setuptools.pypa.io/en/latest/userguide/
  - invoke: task execution tool and libary similar to make
- - pypyr: task-runner cli & api for automation pipelines combining different scripts in different languages and apps
  - pydoit: doit comes from the idea of bringing the power of build-tools to execute any kind of task
+ - pypyr: task-runner cli & api for automation pipelines combining different scripts in different languages and apps
  - tox: task automation tool which can make venvs to run builds, tests, docs, publishing etc a complete CI/CD workflow which can also execute make commands but configuration is done in .ini file
  - nox: command-line tool that automates testing in multiple Python environments, similar to tox. Unlike tox, Nox uses a standard Python file for configuration
  - pre-commit: framework for managing and maintaining multi-language pre-commit hooks
@@ -399,13 +408,16 @@ Refactoring:
  - refurb: tool for refurbishing and modernizing Python codebases suggesting code improvements
 
 Linting:
+ - ruff: extremely fast linter written in Rust
  - pylama: wrapper for multiple linters/checkers used for code audit
  - pylint: superset of flake8
     - flake8: check for errors and style wrapper on pyflakes and few other tools
+       - bugbear: flake8 plugin which catches additional bugs and runs on multiple cores
        - autoflake: removes unused imports of stdlib and unused variables reported by pyflakes
          - pyflakes: A simple program which checks Python source files for error
        - mccabe: code complexity checker
        - pycodestyle: formally called pep8
+    - pyreverse: intergrated into pylint to allow generating class diagrams from code
  - pygrep: Find python identifiers in code files where they are imported
  - slotscheck: Find mistakes in your __slots__ definitions
  - Pyroma: packing linter point out issues related to packaging your code for distribution on PyPI with properly formatted descriptions, versions, and meta data fields
@@ -425,6 +437,7 @@ Type Checking (static):
  - pytype: checks and infers types for your Python code - without requiring type annotations also support cross function inference which is not available with mypy and also allows runtime lenience compared to mypy(windows support pending) (Google)
  - pyre: static type checker (Facebook)
  - pyright: static type checker (Microsoft) has external dependencies
+ - pylyzer: static code analyzer & language server which is 100x faster than others. It  uses the type checker of the Erg programming language internally.
  - attrs: creating dataclasses with less boilerplate based on type hints on which stdlib dataclasses is based on
 
 Dynamic Type Checking:
@@ -536,6 +549,7 @@ Workflow / Automation Frameworks:
  - luigi: workflow automation framework from Spotify
  - airflow: workflow automation framework from Airbnb
  - redun: Yet another redundant workflow engine
+ - pydags: creation and running of lightweight DAG-based workloads locally based on Redis and GraphiViz alternate to technologies like Airflow, Kubeflow, and Luigi are more heavyweight, enterprise-level workflow manager
 
 Task Queue / Message Queue / Scheduling:
  - dramatiq: background task processing library for Python with a focus on simplicity, reliability and performance
@@ -599,6 +613,7 @@ Graphics:
 
 Webscripting:
  - Brython: run python in place of javascript in the frontend
+ - pyscript: python replacement for javascript based on pyodide and WASM
 
 HTML / Web page generation:
  - jinja2: templating engine
@@ -608,6 +623,7 @@ HTML / Web page generation:
  - pygments: python sytax highlighter for webpages
  - fastpages: github pages like static site generator from many different document formats
  - esparto: Create webpages to display data and outputs using bootstrap and jinja2
+ - lektor: python based flat file CMS
 
 Webservice API:
  - https://public-apis.io/
@@ -621,6 +637,8 @@ Webservice API:
 
 Webservice API libraries:
  - tweepy: Twitter streaming API library
+ - snscrape: scraper for social networking services (SNS). It scrapes things like user profiles, hashtags, or searches and returns the discovered items
+ - apify-sdk-python: access apify store with pre-made automation scripts for extracting data from the web
  - twitter-scraper: Twitter frontend (JavaScript) has it's own API, reverse–engineered. No API rate limits. No restrictions. Extremely fast
  - facebook-scraper: similar to twitter-scraper to scrape data without API
  - mastodon.py: wrapper for mastodon API
@@ -804,6 +822,7 @@ EDA libraries:
  - edatk: Exploratory Data Analysis Toolkit (in development)
 
 Pandas:
+ - pygwalker: Turn your pandas dataframe into a Tableau-style User Interface for visual analysis
  - bamboolib: GUI for pandas
  - mitoinstaller/mitosheet: spreadsheet frontend in notebooks with excel formula support that generates equivalent code based on plotly
  - pandas-gui: GUI for pandas
@@ -839,7 +858,7 @@ Plotting:
  - Pygal: SVG Plots
  - Plotly: Web plots
  - Ggplot: based on R ggplot
- - pyecharts: echarts libary for python
+ - pyecharts: wrapper for Apache echarts libary with high quality js charts
  - chartify: charting package based on bokeh with consistent interface making it easy for data scientists
  - Pandas-Bokeh: Bokeh plotting backend for Pandas, GeoPandas and Pyspark DataFrames
  - CMasher: a collection of scientific colormaps and utility functions
@@ -909,10 +928,13 @@ Spatial / Geographical:
  - pygmt: python API for Generic Mapping Tools - processing geospatial and geophysical data and making publication quality maps and figures
 
 Graphs / DAG:
- - NetworkX, igraph - Graph analysis
- - nxviz: Graph Visualiation
- - Pydot: graph plotting
-    - Graphviz – underlying for pydot
+ - graph-tool, igraph, networkit, snap: C libraries for Graph analysis with python bindings
+ - networkx: creation, manipulation, and study of the structure, dynamics, and functions of complex networks
+ - graphviz: thin wrapper over GraphViz open source graph plotting tools
+ - pygraphviz: full blown python interface (create, edit, read, write, and draw) to Graphviz with similar API to networkx connected though SWIG
+ - graphviz-python: official GraphViz python interface
+ - pydot: pure python interface to Dot language for file manipulation, plotting requires GraphViz
+ - nxviz: declarative graph Visualiation library for networkx graph objects
 
 Dashboards:
  - datapane: upload and share interactive plot made from any plotting library as reports
@@ -924,24 +946,26 @@ Dashboards:
 
 IPython / Jupyter / Notebooks:
  - codebraid: live code in Pandoc Markdown which can be executed and converted to any format; depends on Pandoc
+ - markdown-code-runner: similar to codebraid above
  - jupyterlite: JupyterLab distribution that runs entirely in the browser based on Pyodide
  - IPython.core.display: support for various formats to be displayed in the output
  - ipycanvas: lightweight, fast and stable library exposing the browser's Canvas API to IPython
- - nblint: pylint for notebooks
- - nb_black: Black code formatting for notebooks
  - jupyterlab-code-formatter: plugin to facilitate invocation of code formatters such as black and isort
+ - nb_black: Black code formatting for notebooks
+ - nblint: pylint for notebooks
  - nbdime: provides tools for diffing and merging of Jupyter Notebooks
     - nbdiff: compare notebooks in a terminal-friendly way
     - nbmerge: three-way merge of notebooks with automatic conflict resolution
     - nbdiff-web: shows you a rich rendered diff of notebooks
     - nbmerge-web: gives you a web-based three-way merge tool for notebooks
     - nbshow: present a single notebook in a terminal-friendly way
+ - execnb: jupyter notebook execution and output capture through code and CLI, without needing jupyter
  - nbterm: simple notebook for terminal
  - nbpreview: terminal viewer for Jupyter notebooks. It's like cat for ipynb files
  - nbstripout: strip output from Jupyter and IPython notebooks
  - nbconvert: Convert Notebooks to other formats pdf, static presentations based on reveal.js (part of jupyter)
  - nbinteract: Convert notbooks with widgets to run on remote binder server with full interactivity
- - nbdev: allows you to develop a python library in Jupyter Notebooks with features such as debugging, refactoring, writing tests, create docs, publish packages etc.
+ - nbdev: meta package for debugging, refactoring, testing, create docs, publish packages etc in Notebooks
     - dejavu: create presentations with widgets which are non-interactive (included in >=nbconvert6.2)
  - jupytext: code is saved in a specified format (py, md, Rst etc.) and is synced to ipynb on load
  - jupyter-book: create publication quality books in Jupyter especially with mathematical notation
@@ -963,6 +987,7 @@ IPython / Jupyter / Notebooks:
  - bqplot: interactive 2-D visualization system for Jupyter, based on the constructs of the Grammar of Graphics
  - powerbi-jupyter: IPyWidget that enables customers to use PowerBI embedding capabilities in a Jupyter notebook seamlessly
  - ipython-sql: load sql into IPython magic for IPython, hopefully evolving into full SQL client
+ - ipyreact: React widget in python built on top of AnyWidget
 
 ### Finance:
 
@@ -993,6 +1018,7 @@ Strategies:
  - OctoBot: cryptocurrency trading bot for TA, arbitrage and social trading with an advanced web interface
  - Gemini: cryptocurrency backtesting engine that focuses on simplicity
  - Quantdom: backtesting framework that let's you focus on modeling financial strategies, portfolio management, and analyzing backtests
+ - pybroker: algo trading with ML
 
 Fundamental Analysis:
  - numpy-financial: collection of elementary financial functions for numpy which were removed from numpy
@@ -1091,8 +1117,9 @@ NLP:
  - easynlp: NLP library based on PyTorch from Alibaba
  - transformers: State-of-the-art Natural Language Processing including GPT2 huggingface
  - txtai: AI-powered semantic search based on latest techniques as opposed to keyword based libraries
+ - tweet-preprocessor: preprocessor for NLP on tweets with identification of emojis, hashtags, links etc
 
-Image Processing / Character Recognition (OCR) / Image Recognition / Computer Vision:
+Image Processing / Character Recognition (OCR) / Computer Vision:
  - scikit-image: collection of algorithms for image processing
  - pytesseract: Tesarract 4 python bindings
  - imageio: image manipulation library depends on numpy and pillow (minimum) and ffmpeg (optional)
@@ -1139,6 +1166,9 @@ Web:
 Image:
  - segno: faster and more feature rich QR Code generator
 
+Image as code:
+ - roadmapper: roadmap as code
+
 Audio:
  - pyFLAC: Real-time lossless audio compression in Python based on Soundfile which in turn is based on libsndfile, CFFI and numpy
  - Pedalboard: Spotify’s Audio Effects Library for Python
@@ -1151,7 +1181,7 @@ Video:
 Convenience:
  - Tenacity: maintained fork of `retrying` which retries a fn with custom exception actions
  - polling2: library for polling any repetitive function
- - circuitbreaker: implementation of the "Circuit Breaker" Pattern (https://martinfowler.com/bliki/CircuitBreaker.html)
+ - circuitbreaker: implementation of "Circuit Breaker" Pattern (https://martinfowler.com/bliki/CircuitBreaker.html)
  - mdiff: calculate diffs by character and display in terminal or gui
 
 Uncategorised:
