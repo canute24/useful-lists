@@ -7,13 +7,15 @@
 - vim-airline
 - ale
 - syntastic
-- vim-zettel
-  - vimwiki
+- vim-ouline (vim_=9.0 with python3 support)
+- vim-replica (vim_=9.0 with python3 support)
 - vim-easymotion / pathfinder
 - ctrl-t / ctrl-p # ctrl-t is newer
 - vim-monokai
 - todo.txt-wim
 - nerdtree / netrw # netrw is built-in
+- vim-zettel
+  - vimwiki
 
 ### VSCode Extentions:
 - Python + Pylance # Combined since May 2021
@@ -23,6 +25,10 @@
 
 ### Sublime Extentions:
 - Terminus
+- SendCode
+- BracketHighlighter
+- Github Theme
+- PlantUmlDiagrams
 - Terminal
 - MaterialTheme
 - MarkdownEditing # Has more recommendations
