@@ -11,6 +11,7 @@ Other Similar Collations
  - https://www.libhunt.com/
  - https://libraries.io/
  - http://svaksha.github.io/pythonidae/
+ - https://github.com/dbohdan/structured-text-tools
 
 Cheatsheets:
  - https://nedbatchelder.com/text/which-py.html
@@ -99,6 +100,8 @@ JSON / HOCON:
  - nvelope: Define your JSON schema as Python dataclasses with custom checks and defined conversions from JSON to dict
  - jsonschema: JSON Schema validation
  - python-benedict: drop in replacement for dict with support for keylists and keypaths in dicts
+ - jc: Converts the output of popular command-line tools, file-types, and common strings to JSON, YAML, or Dictionaries to allow piping to jq/jello/yq
+ - jello: CLI tool to filter JSON and JSON Lines data with Python syntax. (Similar to jq)
 
 XML:
  - stdlib> xml.etree.ElementTree: parse XML files
@@ -156,6 +159,7 @@ Documentation:
    - mkdocstrings: Automatic documentation from sources, for MkDocs
  - pycco: port of Docco which generates simple docs from code
  - rst2pdf: creates PDF documents from your ReStructured Text markup
+ - ronn: manpages and HTML from markdown type text
 
 PDFs:
  - pText: pure python pdf manipulation as a JSON like structure support read and editing
@@ -226,6 +230,7 @@ HTTP / TCP / UDP / Websocket:
  - httpx: next generation HTTP client based on requests with async, HTTP/2 support, connection & response pooling etc
  - aiohttp: asynchronous http client
  - python-webrtc: Python extension that provides bindings to WebRTC M92
+ - pooch: download and management of files/datasets
 
 Web Scraping:
  https://pixelscan.net/
@@ -234,9 +239,10 @@ Web Scraping:
  https://jsonplaceholder.typicode.com/
  - BeautifulSoup: parser for xml / html
  - parsel: extract and remove data from HTML and XML using XPath and CSS selectors, optionally combined with regular expressions
- - elemental: makes Selenium automation faster and easier by adding automatic waits and common missing usecases from selenium
-   - Selenium – Browser automation
- - selenium-wire: give access to underlying requests made by the browser
+ - Selenium: Browser testing and automation library
+   - Helium: selenium wrapper with high level commands for automation
+   - Elemental: makes Selenium automation faster and easier by adding automatic waits and common missing usecases from selenium
+   - selenium-wire: give access to underlying requests made by the browser
  - mitmproxy: interactive, SSL/TLS-capable intercepting proxy with a console interface for HTTP and Websockets
    - mitmproxy2swagger: Automagically reverse-engineer REST APIs via capturing traffic
  - playwright: puppeteer devs new project after moving to microsoft for browser control similar API as puppeteer runs on NodeJS backend
@@ -272,6 +278,7 @@ GUI:
  - re-wx: library for building modern declarative desktop applications in WX
  - Kivy: cross-platform framework for development of applications that make use of innovative, multi-touch user interfaces
  - Toga: Python native, OS native, cross platform GUI toolkit part of BeeWare suite
+ - cardstock: cross-platform tool for quickly and easily with inbuilt form designer
  - atlas-python: Atlas toolkit is the easiest way to add a web-based graphical user interface
  - streamlit: create beautiful, performant apps in a few hours in pure Python
  - nicegui: streamlit type simple UI with minimal config
@@ -315,16 +322,21 @@ CLI:
 
 Cryptography / Hashing / Password:
  - stdlib> getpass: portable password input without echoing
- - stdlib> crypt: provides functions that could be used for password hashing dependending on your system and aren’t as strong as passlib
  - stdlib> hashlib: provides functions for file hashing
- - stdlib> secrets:
- - SecretStorage: provides a way for securely storing passwords and other secrets using D-Bus SecretService API supported by GNOME Keyring, KSecretsService and KeePassXC
+ - stdlib> secrets: generate cryptographically strong random numbers suitable for managing data such as passwords, account authentication, security tokens, and related secrets.
  - passlib: widely used and tested hashing library with strong encryption
- - bcrypt: bcrypt hasing algo. Password storage requires multiple passes
  - hmac: used to verify integrity and authenticity of message and doesn’t have the properties required for password hashing
- - keyring: by default uses your user account login password for encryption, so it gets automatically unlocked when you login and you therefore don’t have worry about extra password
- - pycryptodome/pycryptodomex: self-contained low-level cryptographic primitives
+ - pycryptodome/pycryptodomex: self-contained low-level cryptographic primitives; fork of unamintained pycrypto
+   - pykeepass: interact with keepass databases
+     - kpcli: CLI app for accessing keypass databases
  - itsdangerous: safely pass data to untrusted environments and back with crypto sign, timestamp and compression features
+ - cryptography: provides cryptographic recipes and primitives
+   - secretstorage: provides a way for securely storing passwords and other secrets using D-Bus SecretService API supported by GNOME Keyring, KSecretsService and KeePassXC
+     - keyring: by default uses your user account login password for encryption, so it gets automatically unlocked when you login and you therefore don’t have worry about extra password, supports 3rd party backends
+ - bcrypt: bcrypt hasing algo. Password storage requires multiple passes
+ - argon2-cffi: award winning password hashing algo named Argon2
+ - onetimepass: generate and validate HOTP and TOTP tokens
+ - humanhash: hash code converted to human readable words
 
 ## General Programming
 
@@ -332,6 +344,7 @@ OS:
  - pyRTOS: RTOS written in Python
  - xonsh: shell and command prompt
  - pythonnet: python.net gives nearly seamless integration with .NET Framework, .NET Core and Mono
+ - shshsh: bridge between python and the shell
 
 REPL:
  - jupyter-console: ipython like REPL for other kernels like C and Java
@@ -591,7 +604,7 @@ Workflow / Automation Frameworks:
  - redun: Yet another redundant workflow engine
  - pydags: creation and running of lightweight DAG-based workloads locally based on Redis and GraphiViz alternate to technologies like Airflow, Kubeflow, and Luigi are more heavyweight, enterprise-level workflow manager
 
-Task Queue / Message Queue / Scheduling:
+Task Queue / Message Queue / Scheduling / Stream:
  - dramatiq: background task processing library for Python with a focus on simplicity, reliability and performance
  - celery: Task queues used as a mechanism to distribute work across threads or machines
  - pika: pure-Python implementation of the AMQP 0-9-1 protocol including RabbitMQ’s extensions
@@ -601,6 +614,7 @@ Task Queue / Message Queue / Scheduling:
  - python-crontab: uses os specific scheduler in the background
  - schedule: declarative scheduler similar to crontab, easier syntax
  - rocketry: modern, simple, clean and extensive scheduling framework for Python applications
+ - bytewax: event and stream processing framework which works across mutiple backends
 
 Multi-threading / Multi-processing:\
  P.S: On non-compute oriented OS's malloc syscalls are not parallelized and hence taking heaving in this aspect will not see a speed up: https://cosmiccoding.com.au/tutorials/multiprocessing
@@ -723,6 +737,9 @@ Endpoint Frameworks:
  - hug: api/cli/local function; connected to a whole web framework, but gets a lot right
  - lumi: nano framework to convert your python functions into a REST API with minimal setup
  - frappe: low code web framework in Python and Javascript and MariaDB built for ERPNext
+
+Backend Frameworks:
+ - motia: event driven backend workflow framework for multiple languages including python
 
 Web Frameworks:
  - pyhat: Python-htmx-ASGI-Tailwind for creating websites with less JS and more python
@@ -915,6 +932,7 @@ Plotting:
  - gleam: interactive web visualisations
  - pygal: SVG Plots
  - plotly: Web plots
+   - Vizro: toolkit for creating modular data visualization applications from QuantumBlack by McKinsey
  - ggplot: based on R ggplot
  - pyecharts: wrapper for Apache echarts libary with high quality js charts
  - chartify: charting package based on bokeh with consistent interface making it easy for data scientists
@@ -1012,6 +1030,7 @@ IPython / Jupyter / Notebooks:
  - jupyterlite: JupyterLab distribution that runs entirely in the browser based on Pyodide
  - IPython.core.display: support for various formats to be displayed in the output
  - ipycanvas: lightweight, fast and stable library exposing the browser's Canvas API to IPython
+ - ipython-secrets:easier to use secrets in a Jupyter notebook
  - jupyterlab-code-formatter: plugin to facilitate invocation of code formatters such as black and isort
  - nb_black: Black code formatting for notebooks
  - nblint: pylint for notebooks
@@ -1047,6 +1066,7 @@ IPython / Jupyter / Notebooks:
  - linearpy: simiarl to papermill that can use notebooks in production pipelines
  - testbook: passess code from a notebook to a testing file to be used with any testing module
  - pytest-jupyter: pytest plugin for Jupyter
+ - pytest-ndb: Debug pytest tests in a notebook
  - whyprofiler: CPU profiler for Jupyter notebook that not only identifies hotspots but can suggest faster alternatives
  - bqplot: interactive 2-D visualization system for Jupyter, based on the constructs of the Grammar of Graphics
  - powerbi-jupyter: IPyWidget that enables customers to use PowerBI embedding capabilities in a Jupyter notebook seamlessly
@@ -1107,7 +1127,7 @@ Personal Finance:
    - bean-query: Querying beancount ledger with SQL like syntax
    - Fava: Flask based dashboard for beancount ledger
 
-### AI / ML:
+### AI / ML
 
 Machine Learning Tools:
  - mlfinlab: machine learning for finance
@@ -1134,7 +1154,7 @@ Machine Learning Tools:
 MLOps:
  - Feast: an operational data system for managing and serving machine learning features to models in production
  - modelkit: minimalist yet powerful MLOps library for Python, built for people who want to deploy ML models to production
- - mlflow: open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry
+ - mlflow: open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry by Databricks
  - evidently: tools to evaluate, test and monitor machine learning models
  - whitebox: open source E2E ML monitoring platform with edge capabilities that plays nicely with kubernetes
  - whylogs: model monitoring and analysis from logs with visualisation
@@ -1219,6 +1239,7 @@ Time and date:
  - python-dateutil: working with timezones
  - pytz: alternative to python-dateutil (has different interface compared to dateutil so dateutil is preferred)
  - arrow: offers a sensible and human-friendly approach to creating, manipulating, formatting and converting dates, times and timestamps
+ - tzfpy: convert lat-long to timezones, written in rust, sacrifices accuracy at edges for speed
  - pendulum: improves API consistency over arrow
  - dateparser: Natural language date parsing, supports multiple languages
  - convertdate: convert date between various calendar and holiday list
@@ -1280,4 +1301,7 @@ Data:
  - cleanvision: image identification and tagging ML library
  - vidrsyncer: Synchronize calendars and contacts with WebDAV
  - tinyvector: tiny, customisable vector embedding database based on flask+numpy/rust with SQLite backend 500 lines of code scales to 100 million+ dimentions
- - 
+ - pypyp: Python functions on the commands line
+ - pipetools: Write python code in commandline piping syntax like R
+ - jc: Converts the output of popular command-line tools, file-types, and common strings to JSON, YAML, or Dictionaries to allow piping to jq/jello/yq
+ - jello: CLI tool to filter JSON and JSON Lines data with Python syntax. (Similar to jq)
